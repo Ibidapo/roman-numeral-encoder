@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Roman Numeral Encoder</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class="container mx-auto">
+            <div class="text-center">
+                <h2>Roman Numeral Encoder</h3>
+            </div>
+            <form id="convertForm">
+                <div class="d-flex space-around-flex py-1">
+                    <div class="w-40">
+                      <label>Number</label>
+                      <input id="num" type="number">
+                    </div>
+                    <div class="w-40" id="roman-num-box">
+                      <label for="qty">Roman Numeral</label>
+                      <div id="roman-num"></div>
+                    </div>
+                    <div class="w-100" id="error">Number field is empty or invalid</div>
+                </div>
+                <div class="text-center py-1">
+                  <button id="convert">Convert</button>&nbsp;&nbsp;&nbsp;
+                  <button id="reset" disabled>Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <script src="js/index.js"></script>
+    </body>    
+</html>
