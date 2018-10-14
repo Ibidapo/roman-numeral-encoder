@@ -16,8 +16,11 @@ h4 {
 }
 
 /* Styling for Width */
-.w-25, .w-40 {
+.w-15, .w-25, .w-40 {
   position: relative;
+}
+.w-15 {
+  width: 15%;
 }
 .w-25 {
   width: 25%;
@@ -48,8 +51,8 @@ h4 {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.space-around-flex {
-  justify-content: space-around;
+.space-between-flex {
+  justify-content: space-between;
 }
 .vertical-bottom {
   align-self: flex-end;
@@ -147,7 +150,7 @@ button:disabled, .roman-num-box {
 }
 
 @media screen and (max-width: 800px) {
-  .w-10, .w-25, .w-40 {
+  .w-15, .w-25, .w-40 {
     width: 100%;
   }  
   #convertToRoman, #convertToNumber, .roman-num-box {
