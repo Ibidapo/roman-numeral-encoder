@@ -16,11 +16,14 @@ h4 {
 }
 
 /* Styling for Width */
+.w-25, .w-40 {
+  position: relative;
+}
 .w-25 {
   width: 25%;
 }
-.w-45 {
-  width: 45%;
+.w-40 {
+  width: 40%;
 }
 
 /* Styling for Padding */
@@ -57,7 +60,11 @@ label {
   font-size: 0.875rem;
   color: grey;
 }
+input {
+  padding-right: 1.25rem;
+}
 input, #roman-num1, #num2 {
+  position: relative;
   width: 100%;
   min-height: 2rem;
   font-size: 2rem;
@@ -72,6 +79,40 @@ input:focus {
 }
 .roman-num-box {
   border-bottom: 2px solid rgb(238, 238, 238);
+}
+.close-icon {
+  background-color: transparent;
+  position: absolute;
+  top: 1.75rem;
+  left: 100%;
+  padding: 0;
+  outline: 0;
+  cursor: pointer;
+  border:1px solid transparent;
+}
+.close-icon:after {
+  background-color: #dddddd;
+  content: "x";
+  display: block;
+	width: 0.75rem;
+	height: 0.75rem;
+	margin: auto;
+  padding: 3px;
+  line-height: 1;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+  font-size: 0.75rem;
+  z-index:1;
+}
+input:placeholder-shown ~ .close-icon{
+	display: none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 /* Styling for Button */
@@ -106,10 +147,10 @@ button:disabled, .roman-num-box {
 }
 
 @media screen and (max-width: 800px) {
-  .w-10, .w-25, .w-45 {
+  .w-10, .w-25, .w-40 {
     width: 100%;
   }  
-  button {
+  #convertToRoman, #convertToNumber, .roman-num-box {
     margin-top: 0.5rem;
   }
 }

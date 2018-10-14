@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const romanField2 = document.getElementById('roman-num2');
   const convertNumberBtn = document.getElementById('convertToRoman');
   const convertRomanBtn = document.getElementById('convertToNumber');
-  const resetBtn = document.getElementById('reset');
+  const resetNumberBtn = document.getElementById('resetNumber');
+  const resetRomanBtn = document.getElementById('resetRoman');
 
   // Function to convert NUMBER to ROMAN NUMERAL
-  const convertNumber = () => {
+  const convertNumber = (numberVal) => {
     let convertNum = '';
-    let numberVal = parseInt(numberField1.value);
 
     for (let item of numArr){
       if (numberVal === 0) {
@@ -31,8 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Function to convert ROMAN NUMERAL to NUMBER
-  const convertRoman = () => {
-    let romanVal = romanField2.value;
+  const convertRoman = (romanVal) => {
     let convertRoman = numArr[romanArr.indexOf(romanVal[0])];
     let prev, curr;
 
@@ -56,15 +55,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Regular expression to check for alphabets or dot
     let regex = /[A-Za-z\.]/;
     let numberFieldCheck = regex.test(numberField1.value);
+    let numberVal = parseInt(numberField1.value);
 
     // Checks if the NUMBER field value is null, empty or contains invalid characters
-    if (numberField1.value == null || numberField1.value == "" || numberFieldCheck) {
+    if (numberField1.value == null || numberField1.value == "" || numberFieldCheck || numberVal < 1) {
       document.getElementById('error1').style.display = "block";
       romanField1.innerHTML = '';
     } else {
-      let romanNum = convertNumber();
+      let romanNum = convertNumber(numberVal);
       romanField1.innerHTML = romanNum;
-      resetBtn.disabled = false;
       document.getElementById('error1').style.display = "none";
     }
   });
@@ -73,26 +72,32 @@ document.addEventListener('DOMContentLoaded', function() {
   convertRomanBtn.addEventListener('click', function(event) {
     event.preventDefault();
     // Checks for invalid ROMAN NUMERAL characters
-    let romanFieldCheck = romanField2.value.split('').some((char) => !(romanArr.includes(char))); 
+    let romanValCaps = romanField2.value.toUpperCase();
+    let romanValCheck = romanValCaps.split('').some((char) => !(romanArr.includes(char))); 
 
     // Checks if the ROMAN NUMERAL field value is null, empty or contains invalid characters
-    if (romanField2.value == null || romanField2.value == "" || romanFieldCheck) {
+    if (romanField2.value == null || romanField2.value == "" || romanValCheck) {
       document.getElementById('error2').style.display = "block";
       numberField2.innerHTML = '';
     } else {
-      let num2 = convertRoman();
+      romanField2.value = romanValCaps;
+      let num2 = convertRoman(romanValCaps);
       numberField2.innerHTML = num2;
-      resetBtn.disabled = false;
       document.getElementById('error2').style.display = "none";
     }
   });
 
-  // To reset all buttons, input and output fields
-  resetBtn.addEventListener('click', function() {
+  // To reset input and output fields, for converting from NUMBER to ROMAN NUMERAL
+  resetNumberBtn.addEventListener('click', function(event) {
+    event.preventDefault()
     numberField1.value = null;
     romanField1.innerHTML = '';
+  });
+
+  // To reset input and output fields, for converting from ROMAN NUMERAL to NUMBER
+  resetRomanBtn.addEventListener('click', function(event) {
+    event.preventDefault()
     numberField2.innerHTML = '';
     romanField2.value = null;
-    resetBtn.disabled = true;
   });
 });

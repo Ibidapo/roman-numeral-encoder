@@ -15,9 +15,10 @@
                 <div class="d-flex space-around-flex py-1">
                     <div class="w-25">
                       <label>Number</label>
-                      <input id="num1" type="number">
+                      <input id="num1" type="number" placeholder=" ">
+                      <button class="close-icon" id="resetNumber"></button>
                     </div>
-                    <div class="w-45 roman-num-box">
+                    <div class="w-40 roman-num-box">
                       <label>Roman Numeral</label>
                       <div id="roman-num1"></div>
                     </div>
@@ -26,11 +27,13 @@
                     </div>
                     <div class="w-100" id="error1">Number field is empty or invalid</div>
                 </div>
+                <br>
                 <h4>Convert Roman Numeral to Number</h4>
                 <div class="d-flex space-around-flex py-1">
-                    <div class="w-45">
+                    <div class="w-40">
                       <label>Roman Numeral</label>
-                      <input id="roman-num2" type="text">
+                      <input id="roman-num2" type="text" placeholder=" ">
+                      <button class="close-icon" id="resetRoman"></button>
                     </div>
                     <div class="w-25 roman-num-box">
                       <label>Number</label>
@@ -41,9 +44,7 @@
                     </div>
                     <div class="w-100" id="error2">Roman Numeral field is empty or invalid</div>
                 </div>
-                <div class="text-center py-1">
-                  <button id="reset" disabled>Reset</button>
-                </div>
+                <br>
             </form>
         </div>
 
