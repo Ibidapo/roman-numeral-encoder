@@ -11,10 +11,16 @@ body {
 .text-center {
   text-align: center;
 }
+h4 {
+  margin: 0.5rem 0;
+}
 
 /* Styling for Width */
-.w-40 {
-  width: 40%;
+.w-25 {
+  width: 25%;
+}
+.w-45 {
+  width: 45%;
 }
 
 /* Styling for Padding */
@@ -42,16 +48,19 @@ body {
 .space-around-flex {
   justify-content: space-around;
 }
+.vertical-bottom {
+  align-self: flex-end;
+}
 
 /* Styling for Input Field */
 label {
   font-size: 0.875rem;
   color: grey;
 }
-input, #roman-num {
+input, #roman-num1, #num2 {
   width: 100%;
-  min-height: 2.5rem;
-  font-size: 2.5rem;
+  min-height: 2rem;
+  font-size: 2rem;
   border-bottom-color: rgb(238, 238, 238);
   border-radius: 0;
   border-width: 0 0 2px 0;
@@ -59,9 +68,9 @@ input, #roman-num {
 input:focus {
   outline: none;
   border-width: 0 0 2px 0;
-  border-color: green;
+  border-color: blue;
 }
-#roman-num-box {
+.roman-num-box {
   border-bottom: 2px solid rgb(238, 238, 238);
 }
 
@@ -72,7 +81,7 @@ button {
   cursor: pointer;
   outline: none;
 }
-button:disabled, #roman-num-box {
+button:disabled, .roman-num-box {
   cursor: not-allowed;
 }
 
@@ -86,9 +95,27 @@ button:disabled, #roman-num-box {
   box-shadow: 0 0 2px 2px #666666;
   border-radius: 1rem;
 }
-#error {
+#error1, #error2 {
   display: none;
   color: red;
   margin-top: 0.5rem;
   font-size: 0.875rem;
+}
+#roman-num1, #num2 {
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .w-10, .w-25, .w-45 {
+    width: 100%;
+  }  
+  button {
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    width: 75%;
+  }
 }

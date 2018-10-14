@@ -2,6 +2,7 @@
 <html lang='en'>
     <head>
         <title>Roman Numeral Encoder</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
@@ -10,19 +11,37 @@
                 <h2>Roman Numeral Encoder</h3>
             </div>
             <form id="convertForm">
+                <h4>Convert Number to Roman Numeral</h4>
                 <div class="d-flex space-around-flex py-1">
-                    <div class="w-40">
+                    <div class="w-25">
                       <label>Number</label>
-                      <input id="num" type="number">
+                      <input id="num1" type="number">
                     </div>
-                    <div class="w-40" id="roman-num-box">
-                      <label for="qty">Roman Numeral</label>
-                      <div id="roman-num"></div>
+                    <div class="w-45 roman-num-box">
+                      <label>Roman Numeral</label>
+                      <div id="roman-num1"></div>
                     </div>
-                    <div class="w-100" id="error">Number field is empty or invalid</div>
+                    <div class="w-10 text-center vertical-bottom">
+                      <button id="convertToRoman">Convert</button>    
+                    </div>
+                    <div class="w-100" id="error1">Number field is empty or invalid</div>
+                </div>
+                <h4>Convert Roman Numeral to Number</h4>
+                <div class="d-flex space-around-flex py-1">
+                    <div class="w-45">
+                      <label>Roman Numeral</label>
+                      <input id="roman-num2" type="text">
+                    </div>
+                    <div class="w-25 roman-num-box">
+                      <label>Number</label>
+                      <div id="num2"></div>
+                    </div>
+                    <div class="w-10 text-center vertical-bottom">
+                        <button id="convertToNumber">Convert</button>    
+                    </div>
+                    <div class="w-100" id="error2">Roman Numeral field is empty or invalid</div>
                 </div>
                 <div class="text-center py-1">
-                  <button id="convert">Convert</button>&nbsp;&nbsp;&nbsp;
                   <button id="reset" disabled>Reset</button>
                 </div>
             </form>
